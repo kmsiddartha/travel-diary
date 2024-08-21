@@ -12,8 +12,8 @@ function Home() {
   const handleAuth = async (e) => {
     e.preventDefault();
     const url = isSignUp
-      ? 'http://localhost:5000/api/signup'
-      : 'http://localhost:5000/api/signin';
+      ? 'https://travel-diary-backend-r6x7.onrender.com/api/signup'
+      : 'https://travel-diary-backend-r6x7.onrender.com/api/signin';
     const body = isSignUp
       ? { name, username, password }
       : { username, password };
