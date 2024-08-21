@@ -11,7 +11,7 @@ app.use(cors());
 const mongoURI =
   'mongodb+srv://siddarthakm:Bunnynani1@trips.43aae.mongodb.net/?retryWrites=true&w=majority&appName=trips';
 mongoose
-  .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(mongoURI)
   .then(() => console.log('MongoDB connected'))
   .catch((err) => console.log(err));
 
