@@ -13,7 +13,7 @@ function Diary() {
   useEffect(() => {
     const fetchTrips = async () => {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/trips', {
+      const response = await fetch('https://travel-diary-backend-r6x7.onrender.com/api/trips', {
         headers: { Authorization: token },
       });
       const data = await response.json();
@@ -24,7 +24,7 @@ function Diary() {
 
   const addTrip = async (trip) => {
     const token = localStorage.getItem('token');
-    const response = await fetch('http://localhost:5000/api/trips', {
+    const response = await fetch('https://travel-diary-backend-r6x7.onrender.com/api/trips', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ function Diary() {
 
   const deleteTrip = async (id) => {
     const token = localStorage.getItem('token');
-    await fetch(`http://localhost:5000/api/trips/${id}`, {
+    await fetch(`https://travel-diary-backend-r6x7.onrender.com/api/trips/${id}`, {
       method: 'DELETE',
       headers: { Authorization: token },
     });
