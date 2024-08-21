@@ -1,0 +1,31 @@
+/* App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* background-color: #f0f2f5; */
+  padding: 20px;
+}
+
+/* App.css */
+
+/* Set the background color for the entire app */
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(
+    237,
+    237,
+    237
+  ); /* Set the background color for the entire app */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+}
+
+/* Optional: Set a background color for the root div in case of layout issues */
+#root {
+  min-height: 100vh;
+  background-color: rgb(237, 237, 237); /* Same background color as body */
+}

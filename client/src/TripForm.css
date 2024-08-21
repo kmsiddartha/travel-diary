@@ -1,0 +1,57 @@
+.trip-form {
+  display: grid;
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+}
+
+.form-group label {
+  width: 150px; /* Adjust as needed */
+  font-weight: bold;
+  color: #343a40;
+  text-align: left; /* Ensure label text aligns left */
+}
+
+.form-group input,
+.form-group textarea {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  margin-left: 20px; /* Space between label and input */
+}
+
+.form-group img {
+  margin-top: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.trip-images-preview img {
+  margin-right: 10px;
+}
+
+button[type='submit'] {
+  background-color: #41b3a2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.button-color:hover {
+  background-color: #686767;
+}

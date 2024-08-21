@@ -1,0 +1,115 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(14, 14, 14);
+  margin: 0;
+  padding: 0;
+}
+
+/* Home Container */
+.home-container {
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.home-around {
+  background-color: rgb(237, 237, 237);
+}
+/* App Title */
+.app-title {
+  font-size: 36px;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+/* Home Header */
+.home-header {
+  font-size: 70px;
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  /* Gradient color: left half grey, right half yellow */
+  background: linear-gradient(to right, grey 50%, rgb(1, 228, 153) 50%);
+
+  /* Apply the gradient to the text */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Add black borders to the text */
+  border: 10px black;
+}
+
+.home-header-sign {
+  font-size: 30px;
+  color: #41b3a2;
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Auth Form */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #495057;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button:hover {
+  opacity: 0.9; /* Slightly change opacity on hover */
+}
+
+/* Specific Button Colors */
+.button-color {
+  background-color: #41b3a2;
+  color: white;
+}
+
+.button-color:hover {
+  background-color: #686767;
+}
+
+.button-color-signin {
+  background-color: #41b3a2 !important; /* Force the background color to black */
+  color: white !important; /* Force the text color to white */
+  padding: 10px 20px; /* Add padding for better spacing */
+  border-radius: 5px; /* Slightly round the corners */
+  cursor: pointer; /* Change the cursor to a pointer when hovering */
+  font-size: 16px; /* Increase the font size for better readability */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.button-color-signin:hover {
+  background-color: #686767 !important; /* Darken the button slightly on hover */
+}
