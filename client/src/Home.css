@@ -8,47 +8,73 @@ body {
 
 /* Home Container */
 .home-container {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+/* Description Section */
+.description {
+  flex: 1;
+  padding: 10px;
+  max-width: 600px;
+  /* Light grey background for description */
+  border-radius: 8px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  margin-left: 50px;
+}
+
+/* Authentication Section */
+.auth-container {
+  flex: 1;
   max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #ffffff;
+  background-color: #ffffff; /* White background for authentication */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-right: 60px;
+  margin-left: 60px;
+  margin-top: 120px;
 }
-.home-around {
-  background-color: rgb(237, 237, 237);
+
+.auth-container.full-width {
+  margin: 120px 500px;
 }
-/* App Title */
-.app-title {
-  font-size: 36px;
-  color: #007bff;
+
+/* Description Header */
+.description-header {
+  font-size: 100px;
+  color: transparent;
+  margin-top: 50px;
+  background: linear-gradient(to right, grey 50%, rgb(1, 228, 153) 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 20px;
+  text-align: left; /* Align text to the left for better readability */
+  margin-bottom: 50px;
+}
+
+.maindesc {
+  margin-top: 5px;
+  color: rgb(76, 75, 75);
+  font-size: 20px;
+  background: linear-gradient(
+    to right,
+    rgb(58, 58, 58) 33%,
+
+    rgb(2, 70, 106) 33%,
+    rgb(2, 124, 83) 33%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Home Header */
-.home-header {
-  font-size: 70px;
-  text-align: center;
-  margin-bottom: 50px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-  /* Gradient color: left half grey, right half yellow */
-  background: linear-gradient(to right, grey 50%, rgb(1, 228, 153) 50%);
-
-  /* Apply the gradient to the text */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  /* Add black borders to the text */
-  border: 10px black;
-}
-
 .home-header-sign {
-  font-size: 30px;
+  font-size: 24px;
   color: #41b3a2;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -59,26 +85,25 @@ body {
 }
 
 .form-group {
-  margin-bottom: 15px;
-  text-align: left;
+  margin-bottom: 20px;
 }
 
 .form-group label {
   font-size: 14px;
   color: #495057;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .form-group input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ced4da;
   border-radius: 4px;
 }
 
 /* Buttons */
 button {
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -86,30 +111,28 @@ button {
   margin-top: 10px;
 }
 
-button:hover {
-  opacity: 0.9; /* Slightly change opacity on hover */
-}
-
 /* Specific Button Colors */
 .button-color {
   background-color: #41b3a2;
   color: white;
+  border-radius: 1px solid; /* Border matching the button color */
+  width: 100%;
 }
 
 .button-color:hover {
-  background-color: #686767;
+  background-color: #34a89f; /* Slightly darker green */
 }
 
 .button-color-signin {
-  background-color: #41b3a2 !important; /* Force the background color to black */
-  color: white !important; /* Force the text color to white */
-  padding: 10px 20px; /* Add padding for better spacing */
-  border-radius: 5px; /* Slightly round the corners */
-  cursor: pointer; /* Change the cursor to a pointer when hovering */
-  font-size: 16px; /* Increase the font size for better readability */
-  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  background-color: #41b3a2;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 .button-color-signin:hover {
-  background-color: #686767 !important; /* Darken the button slightly on hover */
+  background-color: #616161; /* Slightly darker green */
 }
