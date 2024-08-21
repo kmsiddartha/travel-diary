@@ -13,7 +13,7 @@ function Diary() {
   useEffect(() => {
     const fetchTrips = async () => {
       const token = localStorage.getItem('token');
-      const response = await fetch('https://travel-diary-backend-r6x7.onrender.com/api/trips', {
+      const response = await fetch('http://localhost:5000/api/trips', {
         headers: { Authorization: token },
       });
       const data = await response.json();
@@ -24,7 +24,7 @@ function Diary() {
 
   const addTrip = async (trip) => {
     const token = localStorage.getItem('token');
-    const response = await fetch('https://travel-diary-backend-r6x7.onrender.com/api/trips', {
+    const response = await fetch('http://localhost:5000/api/trips', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ function Diary() {
 
   const deleteTrip = async (id) => {
     const token = localStorage.getItem('token');
-    await fetch(`https://travel-diary-backend-r6x7.onrender.com/api/trips/${id}`, {
+    await fetch(`http://localhost:5000/api/trips/${id}`, {
       method: 'DELETE',
       headers: { Authorization: token },
     });
@@ -62,20 +62,30 @@ function Diary() {
     <div className='app-container'>
       <h1 className='app-title'>Travel Diary</h1>
       {!selectedTrip ? (
-        <div className='trip-form-container'>
-          <button onClick={handleLogout} className='logout-button'>
-            Logout
-          </button>
-          <TripForm addTrip={addTrip} />
-          <div className='trip-list'>
-            {trips.map((trip) => (
-              <TripCard
-                key={trip._id}
-                trip={trip}
-                onViewDetails={() => handleViewDetails(trip)}
-                onDelete={() => deleteTrip(trip._id)}
-              />
-            ))}
+        <div className='main-container'>
+          <div className='trip-form-section'>
+            <button onClick={handleLogout} className='logout-button'>
+              Logout
+            </button>
+          </div>
+          <div className='trip-list-section'>
+            <div className='your-trips-heading'>
+              <h2>Your Trips</h2>
+            </div>
+            <div className='trip-list'>
+              {trips.map((trip) => (
+                <TripCard
+                  key={trip._id}
+                  trip={trip}
+                  onViewDetails={() => handleViewDetails(trip)}
+                  onDelete={() => deleteTrip(trip._id)}
+                />
+              ))}
+            </div>
+            <div className='trip-form-intro'>
+              <p>Add New trip details using the following form:</p>
+            </div>
+            <TripForm addTrip={addTrip} />
           </div>
         </div>
       ) : (
