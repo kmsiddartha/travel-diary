@@ -4,7 +4,7 @@ import './Home.css'; // Import the CSS file
 
 function Home() {
   const [isSignUp, setIsSignUp] = useState(false);
-  const [name, setName] = useState(''); // Added state for Name
+  const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -12,8 +12,8 @@ function Home() {
   const handleAuth = async (e) => {
     e.preventDefault();
     const url = isSignUp
-      ? 'https://travel-diary-backend-r6x7.onrender.com/api/signup'
-      : 'https://travel-diary-backend-r6x7.onrender.com/api/signin';
+      ? 'http://localhost:5000/api/signup'
+      : 'http://localhost:5000/api/signin';
     const body = isSignUp
       ? { name, username, password }
       : { username, password };
@@ -30,70 +30,90 @@ function Home() {
       navigate('/diary');
     } else if (isSignUp) {
       alert('Signup successful! Please log in.');
-      setIsSignUp(false); // Switch to login after successful signup
+      setIsSignUp(false);
     } else {
       alert(data.message);
     }
   };
 
   return (
-    <div>
-      <h1 className='home-header'>Travel Diary</h1>
-      <div className='home-around'>
-        <div className='home-container'>
-          <h2 className='home-header-sign'>
-            {isSignUp ? 'Sign Up' : 'Sign In'}
-          </h2>
-          <form className='auth-form' onSubmit={handleAuth}>
-            {isSignUp && (
-              <div className='form-group'>
-                <label htmlFor='name'>Name</label>
-                <input
-                  id='name'
-                  type='text'
-                  placeholder='Name'
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                />
-              </div>
-            )}
+    <div className='home-container'>
+      {!isSignUp && (
+        <div className='description'>
+          <h1 className='description-header'>Travel Diary</h1>
+          <p className='maindesc'>
+            Welcome to Travel Diary, your personal digital companion for
+            capturing and organizing your travel memories. With our app, you
+            can:
+          </p>
+          <ul>
+            <li className='maindesc'>
+              Create detailed trip entries with highlights and photos.
+            </li>
+            <li className='maindesc'>
+              Manage and revisit your past journeys in one organized place.
+            </li>
+            <li className='maindesc'>
+              Securely store your travel memories, accessible only to you.
+            </li>
+          </ul>
+          <p className='maindesc'>
+            Sign up today and start documenting your adventures!
+          </p>
+        </div>
+      )}
+
+      <div className={`auth-container ${isSignUp ? 'full-width' : ''}`}>
+        <h2 className='home-header-sign'>{isSignUp ? 'Sign Up' : 'Sign In'}</h2>
+        <form className='auth-form' onSubmit={handleAuth}>
+          {isSignUp && (
             <div className='form-group'>
-              <label htmlFor='username'>Username</label>
+              <label htmlFor='name'>Name</label>
               <input
-                id='username'
+                id='name'
                 type='text'
-                placeholder='Username'
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                placeholder='Name'
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 required
               />
             </div>
-            <div className='form-group'>
-              <label htmlFor='password'>Password</label>
-              <input
-                id='password'
-                type='password'
-                placeholder='Password'
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-            <button className='button-color-signin' type='submit'>
-              {isSignUp ? 'Sign Up' : 'Sign In'}
-            </button>
-          </form>
-          <div className='switch-link'>
-            <button
-              className='button-color'
-              onClick={() => setIsSignUp(!isSignUp)}
-            >
-              {isSignUp
-                ? 'Already have an account? Sign In'
-                : 'New user? Sign Up'}
-            </button>
+          )}
+          <div className='form-group'>
+            <label htmlFor='username'>Username</label>
+            <input
+              id='username'
+              type='text'
+              placeholder='Username'
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
           </div>
+          <div className='form-group'>
+            <label htmlFor='password'>Password</label>
+            <input
+              id='password'
+              type='password'
+              placeholder='Password'
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button className='button-color-signin' type='submit'>
+            {isSignUp ? 'Sign Up' : 'Sign In'}
+          </button>
+        </form>
+        <div className='switch-link'>
+          <button
+            className='button-color'
+            onClick={() => setIsSignUp(!isSignUp)}
+          >
+            {isSignUp
+              ? 'Already have an account? Sign In'
+              : 'New user? Sign Up'}
+          </button>
         </div>
       </div>
     </div>
